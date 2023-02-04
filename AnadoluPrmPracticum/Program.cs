@@ -36,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/HCAPI/swagger.json", "HC API");
+        options.SwaggerEndpoint("/swagger/HCAPI/swagger.json", "AnadoluParamPracticum");
     });
 }
 
