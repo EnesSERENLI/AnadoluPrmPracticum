@@ -9,11 +9,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("HCAPI", new OpenApiInfo()
+    options.SwaggerDoc("AnadoluParamPracticum", new OpenApiInfo()
     {
         Title = "RESTful API",
         Version = "V1",
-        Description = "Restful Api Trials",
+        Description = "AnadoluPrmPracticum Restful Api Trials",
         Contact = new OpenApiContact()
         {
             Email = "enes.serenli@hotmail.com",
@@ -36,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/HCAPI/swagger.json", "AnadoluParamPracticum");
+        options.SwaggerEndpoint("/swagger/AnadoluParamPracticum/swagger.json", "AnadoluParamPracticum");
     });
 }
 
