@@ -1,4 +1,4 @@
-﻿using AnadoluPrmPracticum.Entities;
+﻿using AnadoluPrmPracticum.Data.Model;
 using System.ComponentModel.DataAnnotations;
 
 namespace AnadoluPrmPracticum.Validations
