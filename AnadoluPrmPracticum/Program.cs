@@ -1,10 +1,15 @@
+using AnadoluPrmPracticum.Extentions;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddDbContextDI(builder.Configuration); //Context ekleyen servis(DBExtention)
+builder.Services.AddServicesDI(); //Repositoryleri ekleyen servis(DIExtention)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

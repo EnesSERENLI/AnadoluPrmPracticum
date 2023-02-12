@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum", "AnadoluPrmPracticum\AnadoluPrmPracticum.csproj", "{4A42D798-FE41-48D2-8243-A97C86772631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum", "AnadoluPrmPracticum\AnadoluPrmPracticum.csproj", "{4A42D798-FE41-48D2-8243-A97C86772631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Base", "AnadoluPrmPracticum.Base\AnadoluPrmPracticum.Base.csproj", "{6F7C0ACC-2201-4293-8A35-07FC81D4C896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Data", "AnadoluPrmPracticum.Data\AnadoluPrmPracticum.Data.csproj", "{61B77952-954F-4D02-8CC5-C86DA0C2E91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Dto", "AnadoluPrmPracticum.Dto\AnadoluPrmPracticum.Dto.csproj", "{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Service", "AnadoluPrmPracticum.Service\AnadoluPrmPracticum.Service.csproj", "{64A52D15-7F36-477A-ADC7-6B952B742D12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4A42D798-FE41-48D2-8243-A97C86772631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A42D798-FE41-48D2-8243-A97C86772631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A42D798-FE41-48D2-8243-A97C86772631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7C0ACC-2201-4293-8A35-07FC81D4C896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7C0ACC-2201-4293-8A35-07FC81D4C896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7C0ACC-2201-4293-8A35-07FC81D4C896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7C0ACC-2201-4293-8A35-07FC81D4C896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B77952-954F-4D02-8CC5-C86DA0C2E91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B77952-954F-4D02-8CC5-C86DA0C2E91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B77952-954F-4D02-8CC5-C86DA0C2E91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B77952-954F-4D02-8CC5-C86DA0C2E91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
