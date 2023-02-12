@@ -54,7 +54,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseCustomExceptionMiddle();//
+app.UseCustomExceptionMiddle();//CustomMilddlerWare'den geliyor.
 
 app.MapControllers();
 

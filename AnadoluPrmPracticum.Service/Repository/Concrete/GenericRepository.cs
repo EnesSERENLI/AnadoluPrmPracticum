@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace AnadoluPrmPracticum.Service.Repository.Concrete
             _entities = _context.Set<TEntity>();
         }
 
+        public bool Any(Expression<Func<TEntity, bool>> expression) =>  _entities.Any(expression); 
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {

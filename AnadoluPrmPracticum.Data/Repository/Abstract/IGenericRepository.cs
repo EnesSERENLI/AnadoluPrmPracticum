@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,5 +14,6 @@ namespace AnadoluPrmPracticum.Data.Repository.Abstract
         void RemoveAsync(TEntity entity);
         void Update(TEntity entity);
         Task<IEnumerable<TEntity>> GetAllAsync();
+        bool Any(Expression<Func<TEntity, bool>> expression); //Exist Control
     }
 }

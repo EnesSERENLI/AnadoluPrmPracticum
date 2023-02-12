@@ -31,7 +31,7 @@ namespace AnadoluPrmPracticum.Controllers
         //{            
         //    return new CommonResponse<List<Game>>(games.OrderByDescending(x=>x.ReleaseDate).ToList()); //Oyunların çıkış tarihlerine göre sıralayıp listeyi geri dön.
         //}
-
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
