@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnadoluPrmPracticum.Data\AnadoluPrmPracticum.Data.csproj" />
+    <ProjectReference Include="..\AnadoluPrmPracticum.Dto\AnadoluPrmPracticum.Dto.csproj" />
   </ItemGroup>
 
 </Project>
