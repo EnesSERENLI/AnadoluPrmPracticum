@@ -1,7 +1,11 @@
 ﻿using AnadoluPrmPracticum.Common;
 using AnadoluPrmPracticum.Data.Model;
 using AnadoluPrmPracticum.Data.UnitOfWork.Abstract;
+using AnadoluPrmPracticum.Dto.Model;
+using AnadoluPrmPracticum.Dto.Validations;
 using AnadoluPrmPracticum.Service.UnitOfWork.Concrete;
+using AutoMapper;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,23 +18,12 @@ namespace AnadoluPrmPracticum.Controllers
     public class GameController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        public GameController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        public GameController(IUnitOfWork unitOfWork,IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
-
-        //private static List<Game> gameList = new List<Game>() //Artık veritabanında verile gelecek.
-        //{
-        //    new Game{ID = 1,Name = "God Of War", Price = 999,ReleaseDate = Convert.ToDateTime("2018-08-30")},
-        //    new Game{ID = 2,Name = "Elden Ring", Price = 899,ReleaseDate = Convert.ToDateTime("2022-03-27")},
-        //    new Game{ID = 3,Name = "Horizon Zero Down", Price = 799,ReleaseDate = Convert.ToDateTime("2016-01-12")},
-        //};
-
-        //[NonAction]
-        //private async Task<CommonResponse<List<Game>>> GetGameList(List<Game> games)
-        //{            
-        //    return new CommonResponse<List<Game>>(games.OrderByDescending(x=>x.ReleaseDate).ToList()); //Oyunların çıkış tarihlerine göre sıralayıp listeyi geri dön.
-        //}
         
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -61,24 +54,30 @@ namespace AnadoluPrmPracticum.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Game game) //ekleme işlemleri
+        public async Task<IActionResult> Post([FromBody] CreateGameDTO game) //ekleme işlemleri
         {
-            if (!ModelState.IsValid)
+            CreateGameDTOValidation validator = new CreateGameDTOValidation();
+            ValidationResult results = validator.Validate(game);//Validasyon islemi.. 
+            if (!results.IsValid)
             {
                 return BadRequest();
             }
-            game.CreatedAt = DateTime.Now;
-            game.CreatedBy = "SystemUser";
-            await _unitOfWork.GameRepository.InsertAsync(game);
+            var newGame = _mapper.Map<Game>(game);//Automapper
+
+            newGame.CreatedAt = DateTime.Now;
+            newGame.CreatedBy = "SystemUser";
+            await _unitOfWork.GameRepository.InsertAsync(newGame);
             await _unitOfWork.CompleteAsync();
 
-            return CreatedAtAction("GetById", new { game.ID }, game);
+            return CreatedAtAction("GetById", new { newGame.ID }, newGame);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] Game updated) //Güncelleme
+        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] UpdateGameDTO updated) //Güncelleme
         {
-            if (!ModelState.IsValid) //Dto'lar yazılınca burası işe yaramış olacak.
+            UpdateGameDTOValidator validator = new UpdateGameDTOValidator();
+            ValidationResult results = validator.Validate(updated);
+            if (!results.IsValid)
                 return BadRequest();
 
             var item = await _unitOfWork.GameRepository.GetByIdAsync(id);
@@ -87,11 +86,9 @@ namespace AnadoluPrmPracticum.Controllers
                 return NotFound("Güncellemek istediğiniz oyuna erişilemedi. Lütfen sayfayı yineleyip tekrar deneyiniz!");
             }
 
-            item.Name =updated.Name; //Bu işlemler daha sonra Automapper ile yapılacak. 
-            item.Price = updated.Price;
-            item.ReleaseDate = updated.ReleaseDate;
+            var game = _mapper.Map<Game>(updated);//Automapper
 
-            _unitOfWork.GameRepository.Update(item);
+            _unitOfWork.GameRepository.Update(game);
             await _unitOfWork.CompleteAsync();
 
             return Ok("Oyun başarı ile güncellendi.!");
