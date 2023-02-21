@@ -25,7 +25,7 @@ namespace AnadoluPrmPracticum.UnitTests.Application.GameOperations.QueryOperatio
             query.gameId = -1;
             FluentActions
                 .Invoking(() => query.Handle())
-                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Author bulunamadı");
+                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Game bulunamadı");
         }
 
         [Fact]
