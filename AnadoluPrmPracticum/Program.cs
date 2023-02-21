@@ -16,17 +16,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContextDI(builder.Configuration); //Context ekleyen servis(DBExtention)
 builder.Services.AddServicesDI(); //Repositoryleri ekleyen servis(DIExtention)
-builder.Services.AddSingleton<ILoggerService, FileLogger>(); //Þuanda masaüstünde bir txt dosyasý oluþturup api'lere gelen request ve response'larý oraya kaydediyorum.Eger console'a yazdirmak istersem tek yapmam gereken FileLogger yerine ConsoleLogger yazmak..
-
-//AutoMapper
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
-//Mapperconfig
-var mapperConfig = new MapperConfiguration(cfg =>
-{
-    cfg.AddProfile(new Mapping());
-});
-builder.Services.AddSingleton(mapperConfig.CreateMapper());
+ //Þuanda masaüstünde bir txt dosyasý oluþturup api'lere gelen request ve response'larý oraya kaydediyorum.Eger console'a yazdirmak istersem tek yapmam gereken FileLogger yerine ConsoleLogger yazmak..
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
