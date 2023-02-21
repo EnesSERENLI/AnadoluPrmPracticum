@@ -5,13 +5,17 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum", "AnadoluPrmPracticum\AnadoluPrmPracticum.csproj", "{4A42D798-FE41-48D2-8243-A97C86772631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Base", "AnadoluPrmPracticum.Base\AnadoluPrmPracticum.Base.csproj", "{6F7C0ACC-2201-4293-8A35-07FC81D4C896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum.Base", "AnadoluPrmPracticum.Base\AnadoluPrmPracticum.Base.csproj", "{6F7C0ACC-2201-4293-8A35-07FC81D4C896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Data", "AnadoluPrmPracticum.Data\AnadoluPrmPracticum.Data.csproj", "{61B77952-954F-4D02-8CC5-C86DA0C2E91C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum.Data", "AnadoluPrmPracticum.Data\AnadoluPrmPracticum.Data.csproj", "{61B77952-954F-4D02-8CC5-C86DA0C2E91C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Dto", "AnadoluPrmPracticum.Dto\AnadoluPrmPracticum.Dto.csproj", "{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum.Dto", "AnadoluPrmPracticum.Dto\AnadoluPrmPracticum.Dto.csproj", "{C92073BF-2F45-4B8D-B4B0-ABD31D5DD718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.Service", "AnadoluPrmPracticum.Service\AnadoluPrmPracticum.Service.csproj", "{64A52D15-7F36-477A-ADC7-6B952B742D12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnadoluPrmPracticum.Service", "AnadoluPrmPracticum.Service\AnadoluPrmPracticum.Service.csproj", "{64A52D15-7F36-477A-ADC7-6B952B742D12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{68754489-6DF0-404F-A859-8F92A3D264E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnadoluPrmPracticum.UnitTests", "AnadoluPrmPracticum.UnitTests\AnadoluPrmPracticum.UnitTests.csproj", "{9CA4B086-3155-4158-9D1C-8EDF64DFFD25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64A52D15-7F36-477A-ADC7-6B952B742D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA4B086-3155-4158-9D1C-8EDF64DFFD25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA4B086-3155-4158-9D1C-8EDF64DFFD25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA4B086-3155-4158-9D1C-8EDF64DFFD25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA4B086-3155-4158-9D1C-8EDF64DFFD25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9CA4B086-3155-4158-9D1C-8EDF64DFFD25} = {68754489-6DF0-404F-A859-8F92A3D264E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F195DF00-87FE-44A4-9CF1-F55C20DB1A09}
